@@ -7,6 +7,11 @@
 ;; $ clj -Sdeps '{:deps {nrepl {:mvn/version "0.7.0"} cider/cider-nrepl {:mvn/version "0.25.2"}}}' \
 ;;       -m nrepl.cmdline \
 ;;       --middleware '["cider.nrepl/cider-middleware"]'
+;;
+;; QUESTIONS FOR RC
+;;
+;; 1. What is our "learning target" for this pairing session?
+;; 2. What skill level should I assume on the part of my "coding partner"?
 
 (ns recurse.parser
   (:require
@@ -31,6 +36,9 @@
 (defn tokenize
   "Take a Lispy string and turn it into a vector of tokens"
   [s]
+  (prn 'tokenize)
+  ;; start with our whole string, split out into 1-char strings,
+  ;; an empty "current" token, and an empty vector of tokens we've seen so far
   (loop [cs (split s #"") token nil tokens []]
     (if (seq cs)
       (condp = (first cs)
@@ -46,15 +54,16 @@
         "}" (recur (next cs) nil (append tokens token :ccurly))
         ;; Symbols
         "'" (recur (next cs) [:SYMBOL] tokens)
-        ;; normal alphanumeric token
+        ;; we're at the start/in the middle of a normal alphanumeric token
         (recur (next cs) (->token token (first cs)) tokens))
-      ;; base case - just return the list of all tokens
+      ;; base case - no charse left, just return the list of all tokens
       tokens)))
 
 (defn parse-tokens
   "Parse a vector of tokens into a 2-tuple containing the parsed AST and
    the vector of tokens left to be parsed."
   [tokens close]
+  (prn 'parse-tokens)
   (loop [[ast [token & tail]] [[] tokens]]
     (cond
       ;; first check if we've found the start of a new sub-form
@@ -80,7 +89,14 @@
 
 (parse-tokens [:oparen "hey!" :there :cparen] nil)
 
-(defn str->ast [s]
+(defn str->ast
+  "The main event: take a string and turn it into an AST"
+  [s]
+  (prn 'str->ast)
+  ;; Two-phase approach: first "tokenize" the string, turning it into a flat
+  ;; vector of tokens, then expand the tokens into a full AST.
+  ;; Our run fn, below, will call this fn and then run the returned AST in
+  ;; an itty-bitty runtime.
   (let [tokens (tokenize s)]
     (first (parse-tokens tokens nil))))
 
