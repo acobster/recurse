@@ -80,9 +80,7 @@
         (recur [(conj ast (cons :VECTOR sub-form)) tail]))
 
       ;; we found the end of the current form being parsed
-      (= token close) (do
-                        (prn 'CLOSE [ast tail])
-                        [ast tail])
+      (= token close) [ast tail]
 
       ;; consume a single token
       (seq tail) (recur [(conj ast token) tail]))))
@@ -105,7 +103,24 @@
 (str->ast "(first (list,,, {:x, :y, :a ,,, ['one 'two 'three]} 1 (+ 2 3) 9))")
 
 (run "(first (list,,, {:x :y :a ['one 'two 'three]} 1 (+ 2 3) 9))")
+(run "(+ 1 2 3 4)")
+
+(defn eval-form [form]
+  (prn 'eval-form form)
+  (cond
+    (vector? form)
+    (let [runtime {"+" (fn [& args]
+                         (apply + (map #(Integer. %) args)))
+                   ;; more fns go here
+                   "first" first
+                   "list" list}
+          f (get runtime (first form))]
+      (when (nil? f)
+        (throw (ex-info (str "unknown function: " (first form)) {})))
+      (apply f (map eval-form (next form))))
+    :else
+    form))
 
 (defn run [s]
-  (prn 'TODO)
-  s)
+  (prn 'run)
+  (eval-form (first (str->ast s))))
