@@ -65,7 +65,7 @@
 ;; value is just sum(): value([3, 2, 1]) => 6
 
 (defn join [a b]
-  (map max a b))
+  (vec (map max a b)))
 
 (defn sum [v]
   (reduce + v))
