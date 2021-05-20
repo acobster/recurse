@@ -72,7 +72,7 @@
 ;; value is just sum(): value([3, 2, 1]) => 6
 
 (defn join [a b]
-  (vec (map max a b)))
+  (mapv max a b))
 
 (defn sum [v]
   (reduce + v))
@@ -126,7 +126,7 @@
              (Thread/sleep (rand-int 3000))
              (increment (deref (get nodes (rand-int 3))))
              (prnf "DISTRIBUTED VALUES: %s"
-                   (vec (map (fn [node] (value @node)) nodes)))
+                   (mapv (fn [node] (value @node)) nodes))
              ;; Note that by the time we get here, some or all subscribed nodes
              ;; may not be up to date because of "network" latency 🐙
              :done)))
