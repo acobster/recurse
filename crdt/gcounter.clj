@@ -49,7 +49,9 @@
              (recur))
     subscription))
 
-(defn unsub-all! []
+(defn unsub-all!
+  "Dev helper for cancelling all subscriptions to the endpoint channel."
+  []
   (doall (for [subscription @subscriptions]
            (untap endpoint subscription)))
   (reset! subscriptions #{}))
@@ -68,15 +70,27 @@
   )
 
 
-;; join is a merge using max(): merge([3, 2, 0], [2, 2, 1]) => [3, 2, 1]
-;; value is just sum(): value([3, 2, 1]) => 6
+;; Underlying CRDT logic. These are like the internal functions that would
+;; live in the core of a CRDT library API, rather than public API functions.
 
-(defn join [a b]
+(defn join
+  "Merge two increment vectors together by taking the max of each
+  corresponding pair at a given index."
+  [a b]
   (mapv max a b))
 
-(defn sum [v]
+(defn value*
+  "Get the current global value based on node-local view of the state."
+  [v]
   (reduce + v))
 
+(comment
+  (join [3 2 0] [2 2 1])
+  ;; => [3 2 1]
+
+  (value* [1 2 3])
+  ;; => 6
+  )
 
 
 (defn node
