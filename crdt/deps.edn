@@ -1,0 +1,4 @@
+;; To start a REPL:
+;; $ clj -m nrepl.cmdline --interactive
+{:deps {nrepl/nrepl {:mvn/version "0.8.3"}
+        org.clojure/core.async {:mvn/version "1.3.618"}}}
