@@ -141,20 +141,20 @@
 
   ;; Evaluate this in the REPL to see DISTRIBUTED VALUES converge on the
   ;; true global value.
-  (doall (for [_ (range 3)]
-           (do
-             (Thread/sleep (rand-int 3000))
-             (increment (get nodes (rand-int 3)))
-             ;; Print what each node thinks the global value is. For example,
-             ;; [3 2 1] means:
-             ;; - Node 0 thinks the global value is 3
-             ;; - Node 1 thinks the global value is 2
-             ;; - Node 2 thinks the global value is 1
-             (prnf "DISTRIBUTED VALUES: %s"
-                   (mapv (fn [node] (value node)) nodes))
-             ;; Note that by the time we get here, some or all subscribed nodes
-             ;; may not be up to date because of "network" latency 🐙
-             :done)))
+  (do
+    (dotimes [_ 3]
+      (Thread/sleep (rand-int 3000))
+      (increment (get nodes (rand-int 3)))
+      ;; Print what each node thinks the global value is. For example,
+      ;; [3 2 1] means:
+      ;; - Node 0 thinks the global value is 3
+      ;; - Node 1 thinks the global value is 2
+      ;; - Node 2 thinks the global value is 1
+      (prnf "DISTRIBUTED VALUES: %s"
+            (mapv (fn [node] (value node)) nodes)))
+    ;; Note that by the time we get here, some or all subscribed nodes
+    ;; may not be up to date because of "network" latency 🐙
+    (println "Done broadcasting."))
 
   (map deref nodes)
   (map (fn [node] (value node)) nodes)
