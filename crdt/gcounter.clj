@@ -1,4 +1,6 @@
 ;; A simple grow-only counter CRDT, AKA G-Counter.
+;; To start a REPL:
+;; $ clj -m nrepl.cmdline --interactive
 (ns gcounter
   (:require
     [clojure.core.async :refer [chan <! put! mult tap untap go-loop]]))
