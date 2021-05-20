@@ -78,9 +78,14 @@
   (reduce + v))
 
 
-(defn node [idx]
-  (atom {:idx idx
-         :state [0 0 0]}))
+
+(defn node
+  "Create a node and subscribe it to updates coming over the endpoint channel."
+  [idx]
+  (let [local-node (atom {:idx idx
+                          :state [0 0 0]})]
+    (subscribe-node! idx)
+    local-node))
 
 (def nodes [(node 0) (node 1) (node 2)])
 
@@ -88,23 +93,22 @@
   (subscribe! (fn [new-state]
                 (let [node (get nodes idx)
                       merged (join new-state (get @node :state))]
-                  (prnf "merged at idx %s: %s" idx merged)
+                  (prnf "merged at node %s: %s" idx merged)
                   (swap! node assoc :state merged)))))
 
 
-(defn increment [{:keys [idx state]}]
-  (let [state (update state idx inc)]
-    (prnf "new state at node %s: %s" idx state)
-    ;; here's where we're muddying the waters a little bit by using global
-    ;; state - we have access to all nodes at this point and we need to
-    ;; swap! a specific one. In a truly distribute system, increment would
-    ;; not have access to all nodes: we'd only be operating on a single nodes'
-    ;; local state.
-    (swap! (get nodes idx) assoc :state state)
+;; The "top-level" API in our simulation which uses CRDTs "under the hood"
+;; for convergence.
+
+(defn increment [node]
+  (let [{:keys [idx state]} @node
+        state (update state idx inc)]
+    (swap! node assoc :state state)
     (broadcast! state)))
 
-(defn value [{:keys [state]}]
-  (sum state))
+(defn value [node]
+  (let [{:keys [state]} @node]
+    (value* state)))
 
 
 (comment
@@ -115,23 +119,24 @@
   (broadcast! [0 1 0])
   (broadcast! [0 1 3])
 
-  (subscribe-node! 0)
-  (subscribe-node! 1)
-  (subscribe-node! 2)
-
   ;; Evaluate this in the REPL to see DISTRIBUTED VALUES converge on the
   ;; true global value.
   (doall (for [_ (range 3)]
            (do
              (Thread/sleep (rand-int 3000))
-             (increment (deref (get nodes (rand-int 3))))
-             (prnf "DISTRIBUTED VALUES: %s"
-                   (mapv (fn [node] (value @node)) nodes))
+             (increment (get nodes (rand-int 3)))
+             ;; Print what each node thinks the global value is. For example,
+             ;; [3 2 1] means:
+             ;; - Node 0 thinks the global value is 3
+             ;; - Node 1 thinks the global value is 2
+             ;; - Node 2 thinks the global value is 1
+             (prnf "DISTRIBUTED VALUES: %s "
+                   (mapv (fn [node] (value node)) nodes))
              ;; Note that by the time we get here, some or all subscribed nodes
              ;; may not be up to date because of "network" latency 🐙
              :done)))
 
   (map deref nodes)
-  (map (fn [node] (value @node)) nodes)
+  (map (fn [node] (value node)) nodes)
 
   )
