@@ -13,6 +13,9 @@
 ;; `value`
 ;; `increment`
 
+;; debug helper
+(defn prnf [& args]
+  (println (apply format args)))
 
 ;; PLUMBING
 ;; This isn't really part of our CRDT implementation or API, think of it as
@@ -28,7 +31,7 @@
 (defn broadcast!
   "Broadcast the message x. Can be literally any value."
   [x]
-  (prn "Broadcasting:" x)
+  (prnf "Broadcasting: %s" x)
   (put! broadcast-channel x))
 
 (defn subscribe!
@@ -53,8 +56,8 @@
 
 
 (comment
-  (subscribe! (fn [message] (prn "Node 1:" message)))
-  (subscribe! (fn [message] (prn "Node 2:" message)))
+  (subscribe! (fn [message] (prnf "Node 1: %s" message)))
+  (subscribe! (fn [message] (prnf "Node 2: %s" message)))
 
   (broadcast! [3, 2, 1])
   (broadcast! [1, 1, 2])
@@ -85,13 +88,13 @@
   (subscribe! (fn [new-state]
                 (let [node (get nodes idx)
                       merged (join new-state (get @node :state))]
-                  (prn "merged at idx" idx merged)
+                  (prnf "merged at idx %s: %s" idx merged)
                   (swap! node assoc :state merged)))))
 
 
 (defn increment [{:keys [idx state]}]
   (let [state (update state idx inc)]
-    (prn "new state:" state)
+    (prnf "new state at node %s: %s" idx state)
     ;; here's where we're muddying the waters a little bit by using global
     ;; state - we have access to all nodes at this point and we need to
     ;; swap! a specific one. In a truly distribute system, increment would
@@ -115,14 +118,15 @@
   (subscribe-node! 0)
   (subscribe-node! 1)
   (subscribe-node! 2)
-  (increment {:idx 1 :state [2 1 4]})
 
+  ;; Evaluate this in the REPL to see DISTRIBUTED VALUES converge on the
+  ;; true global value.
   (doall (for [_ (range 3)]
            (do
              (Thread/sleep (rand-int 3000))
              (increment (deref (get nodes (rand-int 3))))
-             (println "DISTRIBUTED VALUES:")
-             (prn (map (fn [node] (value @node)) nodes))
+             (prnf "DISTRIBUTED VALUES: %s"
+                   (vec (map (fn [node] (value @node)) nodes)))
              ;; Note that by the time we get here, some or all subscribed nodes
              ;; may not be up to date because of "network" latency 🐙
              :done)))
