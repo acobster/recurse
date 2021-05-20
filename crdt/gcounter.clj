@@ -73,27 +73,16 @@
 
 (defn node [idx]
   (atom {:idx idx
-         :state [0, 0, 0]}))
+         :state [0 0 0]}))
 
-(def node0 (node 0))
-(def node1 (node 1))
-(def node2 (node 2))
+(def nodes [(node 0) (node 1) (node 2)])
 
-(subscribe! (fn [new-state]
-              (swap! node0 update :state (fn [old-state]
-                                           (prn "join at node 0" (join old-state new-state))
-                                           (join old-state new-state)))))
-(subscribe! (fn [new-state]
-              (swap! node1 update :state (fn [old-state]
-                                           (prn "join at node 1" (join old-state new-state))
-                                           (join old-state new-state)))))
-(subscribe! (fn [new-state]
-              (swap! node2 update :state (fn [old-state]
-                                           (prn "join at node 2" (join old-state new-state))
-                                           (join old-state new-state)))))
-
-
-(def nodes [node0 node1 node2])
+(defn subscribe-node! [idx]
+  (subscribe! (fn [new-state]
+                (let [node (get nodes idx)
+                      merged (join new-state (get @node :state))]
+                  (prn "merged at idx" idx merged)
+                  (swap! node assoc :state merged)))))
 
 
 (defn increment [{:keys [idx state]}]
@@ -105,21 +94,11 @@
 (defn value [{:keys [state]}]
   (sum state))
 
-;; const x = {a: "A"}
-
-;; const a = x.a
-;; OR
-;; const { a } = x
-
-
 
 (comment
   (value [3, 2, 1])
   (= [3, 2, 1] (join [3, 2, 0] [2, 2, 1]))
 
-  (swap! node0 update :state (fn [old-state]
-                               (prn "join at node 0" (join old-state [0 0 0]))
-                               (join old-state [0 0 0])))
   (broadcast! [2 0 0])
 
   (map deref nodes)
@@ -128,9 +107,8 @@
     (do
       (Thread/sleep (rand-int 3000))
       (increment (deref (get nodes (rand-int 3))))
-      (prn "Value at Node 0:" (value @node0))
-      (prn "Value at Node 1:" (value @node1))
-      (prn "Value at Node 2:" (value @node2))
+      (println "DISTRIBUTED STATE:")
+      (prn (map deref nodes))
       :done)))
 
   )
