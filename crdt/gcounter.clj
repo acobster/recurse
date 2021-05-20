@@ -93,6 +93,19 @@
   )
 
 
+;; Set up our global state underlying the simulated network. Nodes subscribe
+;; themselves to updates from the global endpoint channel, much as they would
+;; in a client-side app over a websocket or something.
+
+(declare nodes)
+
+(defn subscribe-node! [idx]
+  (subscribe! (fn [new-state]
+                (let [node (get nodes idx)
+                      merged (join new-state (get @node :state))]
+                  (prnf "merged at node %s: %s" idx merged)
+                  (swap! node assoc :state merged)))))
+
 (defn node
   "Create a node and subscribe it to updates coming over the endpoint channel."
   [idx]
@@ -102,13 +115,6 @@
     local-node))
 
 (def nodes [(node 0) (node 1) (node 2)])
-
-(defn subscribe-node! [idx]
-  (subscribe! (fn [new-state]
-                (let [node (get nodes idx)
-                      merged (join new-state (get @node :state))]
-                  (prnf "merged at node %s: %s" idx merged)
-                  (swap! node assoc :state merged)))))
 
 
 ;; The "top-level" API in our simulation which uses CRDTs "under the hood"
@@ -144,7 +150,7 @@
              ;; - Node 0 thinks the global value is 3
              ;; - Node 1 thinks the global value is 2
              ;; - Node 2 thinks the global value is 1
-             (prnf "DISTRIBUTED VALUES: %s "
+             (prnf "DISTRIBUTED VALUES: %s"
                    (mapv (fn [node] (value node)) nodes))
              ;; Note that by the time we get here, some or all subscribed nodes
              ;; may not be up to date because of "network" latency 🐙
