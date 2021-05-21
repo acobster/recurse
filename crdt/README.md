@@ -8,7 +8,7 @@ Read `gcounter.clj` to understand what's going on here in detail.
 
 Say we have three nodes on a network. You want each node to keep track of some global state: a single integer. That's our counter. You can't decrement the global count. It can only go up.
 
-Each node has its own G-Counter: a simple CRDT representing a grow-only counter. Now let's say the nodes can only talk to each other indirectly, over a simple pub/sub API with two functions: `broadcast!` and `subscribe!`. To converge on the global value, each node sends the other nodes vectors of how many times it thinks it and the other nodes have incremented:
+Each node has its own G-Counter: a simple CRDT representing that node's **local view** of our grow-only counter. Now let's say the nodes can only talk to each other indirectly, over a simple pub/sub API with two functions: `broadcast!` and `subscribe!`. To converge on the global value, each node sends the other nodes vectors of how many times it thinks it and the other nodes have incremented:
 
 ```
 [5 3 2]
@@ -16,7 +16,7 @@ Each node has its own G-Counter: a simple CRDT representing a grow-only counter.
 
 When a node sends this over the wire, it's saying "I think node 0 has 5 increments, node 1 has 3, and node 2 has 2."
 
-To compute the global count, each node need only add up the increment counts it knows about for each node. This is the equivalent of a user asking "how many clicks has this button gotten?" of an edge server. That server may not have the "true" global count, but it is good enough for rock 'n' roll. This is why CRDTs rock.
+To compute the global count, each node need only add up the increment counts it knows about for each node. In other words, the elements in the vector. This is the equivalent of a user asking "how many clicks has this button gotten?" of an edge server. That server may not have the "true" global count, but it is good enough for rock 'n' roll. This is why CRDTs rock.
 
 Running the main loop towards the bottom of `gcounter.clj` prints something like this:
 
@@ -74,7 +74,7 @@ And the global value at each node:
 (6 6 6)
 ```
 
-Eventual consistency in action!
+Eventual consistency in action! 🤘
 
 One more thing: You may have noticed in the output that node 2 merges the same vector twice:
 
