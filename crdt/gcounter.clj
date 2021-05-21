@@ -143,6 +143,7 @@
   ;; true global value.
   (do
     (dotimes [_ 3]
+      ;; Pause for up to three seconds.
       (Thread/sleep (rand-int 3000))
       (increment (get nodes (rand-int 3)))
       ;; Print what each node thinks the global value is. For example,
@@ -150,13 +151,15 @@
       ;; - Node 0 thinks the global value is 3
       ;; - Node 1 thinks the global value is 2
       ;; - Node 2 thinks the global value is 1
-      (prnf "DISTRIBUTED VALUES: %s"
-            (mapv (fn [node] (value node)) nodes)))
+      (apply prnf "DISTRIBUTED VALUES:\n0: %s\n1: %s\n2: %s"
+                  (mapv value nodes)))
     ;; Note that by the time we get here, some or all subscribed nodes
-    ;; may not be up to date because of "network" latency 🐙
-    (println "Done broadcasting."))
+    ;; may not be up to date because of "network" latency. 🐙
+    ;; You'll likely see more "merged..." messages after this. This is the
+    ;; nodes converging on the global value: Eventual consistency in action!
+    (println "Done incrementing."))
 
   (map deref nodes)
-  (map (fn [node] (value node)) nodes)
+  (map value nodes)
 
   )
