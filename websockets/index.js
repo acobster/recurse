@@ -16,19 +16,40 @@ const websocket = new WebSocketServer({
   httpServer: server
 })
 
+// Keep track of all connected clients.
+const clients = {}
+let nextClientId = 0
+
 websocket.on('request', req => {
   connection = req.accept(null, req.origin)
-  connection.on('close', e => console.log('CLOSE!'))
+
   connection.on('message', msg => {
     console.log(`message: ${msg.utf8Data}`)
   })
-  sendRandomized()
+
+  // Keep track of this client's connection so we can cancel its timer
+  // when the connection closes.
+  const clientId = nextClientId
+  clients[clientId] = { connection }
+  console.log(`clientId = ${clientId}`)
+  sendRandomized(clientId)
+
+  // Cancel the timer on close.
+  connection.on('close', () => {
+    console.log(`Connection to client ${clientId} closed.`)
+    clearTimeout(clients[clientId].timeout)
+  })
+
+  // Avoid overwriting existing client connections.
+  nextClientId++
 })
 
-function sendRandomized() {
+function sendRandomized(clientId) {
   const payload = { number: Math.random() }
   connection.send(JSON.stringify(payload))
-  setTimeout(sendRandomized, 3000)
+
+  // Set a timeout and persist a reference to it, so we can cancel it on close.
+  clients[clientId].timeout = setTimeout(() => sendRandomized(clientId), 3000)
 }
 
 server.listen(8080, () => console.log('listening on 8080'))
