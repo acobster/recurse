@@ -2,6 +2,8 @@
 
 Just playing with WebAssembly
 
+My daily notes about Wasm are [here](https://acobster.keybase.pub/recurse/wasm/) in my Keybase public space.
+
 Some cool resources:
 
 * [mantanonic's wasm sandbox](https://github.com/montanonic/wasm)
