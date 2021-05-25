@@ -11,6 +11,7 @@ wabt().then(wabt => {
   module.then(wasm => {
     const {theAnswer, fib} = wasm.instance.exports
     console.log("the answer is:", theAnswer())
+    console.log("fib(0):", fib(0))
     console.log("fib(1):", fib(1))
     console.log("fib(2):", fib(2))
     console.log("fib(3):", fib(3))
