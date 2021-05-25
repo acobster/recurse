@@ -1,0 +1,11 @@
+{
+  "name": "hello-wasm",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "wabt": "^1.0.23",
+    "wasm-util": "^0.0.2"
+  }
+}
