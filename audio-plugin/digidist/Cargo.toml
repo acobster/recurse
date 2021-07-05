@@ -1,0 +1,18 @@
+[package]
+name = "whisper"
+version = "0.1.0"
+edition = "2018"
+authors = ["Zack Youngren <zack@youngren.io>", "Coby Tamayo <coby@tamayo.email>"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# ditching https://www.seventeencups.net/posts/writing-an-audio-plugin-in-rust/
+# in favor of https://vaporsoft.net/creating-an-audio-plugin-with-rust-vst/
+# vst2 = "0.0.1"
+vst = "0.2.1"
+rand = "0.3"
+
+[lib]
+name = "whisper"
+crate-type = ["cdylib"]
