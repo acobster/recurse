@@ -1,9 +1,15 @@
-use fltk::{app, prelude::*, window::Window};
-
 fn main() {
-    let app = app::App::default();
-    let mut window = Window::new(100, 100, 400, 300, "Hello from Rust! 🦀");
-    window.end();
-    window.show();
-    app.run().unwrap();
+    // https://docs.rs/soundio/0.2.1/soundio/index.html
+    let mut context = soundio::Context::new();
+    context.set_app_name("fclooper");
+    //match context.connect() {
+    //    Ok(_) => println!("we're good."),
+    //    Err(e) => panic!("something bad happened: {:?}", e),
+    //};
+
+    // this also doesn't work:
+    context.connect().expect("something bad happened");
+
+    // I think the problem is this bug:
+    // https://github.com/RamiHg/soundio-rs/issues/2
 }
