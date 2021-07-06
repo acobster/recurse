@@ -19,7 +19,7 @@ fn main() -> anyhow::Result<()> {
     let config: StreamConfig = output.default_input_config()?.into();
     println!("Output config:  {:?}", config);
 
-    let default_latency = 300.0;
+    let default_latency = 200.0;
 
     // configure latency between input/output
     let latency_frames = (default_latency / 1000.0) * config.sample_rate.0 as f32;
@@ -49,6 +49,8 @@ fn main() -> anyhow::Result<()> {
         let mut input_fell_behind = false;
         for sample in data {
             *sample = match consumer.pop() {
+                // Write each sample from the input stream buffer
+                // into the output.
                 Some(s) => s,
                 None => {
                     input_fell_behind = true;
@@ -56,6 +58,7 @@ fn main() -> anyhow::Result<()> {
                 }
             }
         }
+        // This seems to happen for anything below ~200ms for some reason.
         if input_fell_behind {
             eprintln!("input stream fell behind: try increasing latency");
         }
@@ -69,7 +72,7 @@ fn main() -> anyhow::Result<()> {
     input_stream.play()?;
     output_stream.play()?;
 
-    std::thread::sleep(std::time::Duration::from_secs(3));
+    std::thread::sleep(std::time::Duration::from_secs(10));
     drop(input_stream);
     drop(output_stream);
     println!("Done!");
