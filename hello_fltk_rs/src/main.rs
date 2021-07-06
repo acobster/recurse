@@ -1,6 +1,6 @@
 extern crate anyhow;
 
-use cpal::{Sample, SampleFormat, StreamConfig};
+use cpal::{Sample, StreamConfig};
 use cpal::traits::{DeviceTrait, HostTrait, StreamTrait};
 //use fltk::{app, prelude::*, window::Window};
 use ringbuf::RingBuffer;
