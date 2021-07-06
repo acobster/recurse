@@ -1,7 +1,7 @@
 extern crate anyhow;
 
-use cpal::{Data, Sample, SampleFormat};
-use cpal::traits::{DeviceTrait, HostTrait, StreamTrait};
+use cpal::{Sample, SampleFormat};
+use cpal::traits::{DeviceTrait, HostTrait};
 use fltk::{app, prelude::*, window::Window};
 
 fn main() -> anyhow::Result<()> {
@@ -32,11 +32,12 @@ where T: Sample, {
     let sample_rate = config.sample_rate.0 as f32;
     let channels = config.channels as usize;
 
-    // Basic sinusoid at A 880
+    // Basic sinusoid at A 440
     let mut sample_clock = 0f32;
+    // https://pages.mtu.edu/~suits/notefreqs.html
     let mut next_value = move || {
         sample_clock = (sample_clock + 1.0) % sample_rate;
-        (sample_clock * 440.0 * 2.0 * std::f32::consts::PI / sample_rate).sin()
+        (sample_clock * 440.0 * std::f32::consts::PI / sample_rate).sin()
     };
 
     let err_fn = |err| eprintln!("ERROR: {}", err);
@@ -48,6 +49,11 @@ where T: Sample, {
         },
         err_fn,
     );
+
+    match stream {
+        Err(_) => panic!("OH NO"),
+        Ok(_) => println!("ok"),
+    }
 
     std::thread::sleep(std::time::Duration::from_millis(1000));
 
