@@ -1,0 +1,14 @@
+rustc --crate-name hello_fltk_rs --edition=2018 src/main.rs --error-format=json --json=diagnostic-rendered-ansi --crate-type bin \
+--emit=dep-info,link -C embed-bitcode=no -C debuginfo=2 -C metadata=bb418de9ed5492ca -C extra-filename=-bb418de9ed5492ca \
+--out-dir /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps \
+-C incremental=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/incremental \
+-L dependency=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps \
+--extern fltk=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/libfltk-9fe72c6cd0c2a3df.rlib \
+--extern soundio=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/libsoundio-ac9ad6091b38ee1f.rlib \
+-L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/build \
+-L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/build/Release \
+-L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/lib \
+-L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/lib64 \
+-L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/lib/Release \
+-L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/lib64/Release \
+-L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/libsoundio-sys-47bf8501b0360d76/out/lib

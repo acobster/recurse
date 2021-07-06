@@ -1,0 +1,343 @@
+       Fresh cc v1.0.68
+       Fresh unicode-xid v0.2.2
+       Fresh pkg-config v0.3.19
+       Fresh lazy_static v1.4.0
+       Fresh cmake v0.1.45
+       Fresh proc-macro2 v1.0.27
+       Fresh libc v0.2.97
+       Fresh quote v1.0.9
+       Fresh raw-window-handle v0.3.3
+       Fresh bitflags v1.2.1
+       Fresh syn v1.0.73
+       Fresh fltk-sys v1.0.22
+       Fresh libsoundio-sys v0.3.0
+       Fresh fltk-derive v1.0.22
+       Fresh soundio v0.2.1
+       Fresh fltk v1.0.22
+   Compiling hello_fltk_rs v0.1.0 (/home/tamayo/projects/recurse/hello_fltk_rs)
+     Running `rustc --crate-name hello_fltk_rs --edition=2018 src/main.rs --error-format=json --json=diagnostic-rendered-ansi --crate-type bin --emit=dep-info,link -C embed-bitcode=no -C debuginfo=2 -C metadata=bb418de9ed5492ca -C extra-filename=-bb418de9ed5492ca --out-dir /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps -C incremental=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/incremental -L dependency=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps --extern fltk=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/libfltk-9fe72c6cd0c2a3df.rlib --extern soundio=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/libsoundio-ac9ad6091b38ee1f.rlib -L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/build -L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/build/Release -L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/lib -L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/lib64 -L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/lib/Release -L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/lib64/Release -L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/libsoundio-sys-47bf8501b0360d76/out/lib`
+error: linking with `cc` failed: exit status: 1
+  |
+  = note: "cc" "-m64" "-Wl,--eh-frame-hdr" "-Wl,-znoexecstack" "-Wl,--as-needed" "-L" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/hello_fltk_rs-bb418de9ed5492ca.hello_fltk_rs.4q92oliq-cgu.0.rcgu.o" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/hello_fltk_rs-bb418de9ed5492ca.hello_fltk_rs.4q92oliq-cgu.1.rcgu.o" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/hello_fltk_rs-bb418de9ed5492ca.hello_fltk_rs.4q92oliq-cgu.2.rcgu.o" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/hello_fltk_rs-bb418de9ed5492ca.hello_fltk_rs.4q92oliq-cgu.3.rcgu.o" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/hello_fltk_rs-bb418de9ed5492ca.hello_fltk_rs.4q92oliq-cgu.4.rcgu.o" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/hello_fltk_rs-bb418de9ed5492ca.hello_fltk_rs.4q92oliq-cgu.5.rcgu.o" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/hello_fltk_rs-bb418de9ed5492ca.hello_fltk_rs.4q92oliq-cgu.6.rcgu.o" "-o" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/hello_fltk_rs-bb418de9ed5492ca" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/hello_fltk_rs-bb418de9ed5492ca.374vh8q4jshgsw4f.rcgu.o" "-Wl,--gc-sections" "-pie" "-Wl,-zrelro" "-Wl,-znow" "-nodefaultlibs" "-L" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps" "-L" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/build" "-L" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/build/Release" "-L" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/lib" "-L" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/lib64" "-L" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/lib/Release" "-L" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/lib64/Release" "-L" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/libsoundio-sys-47bf8501b0360d76/out/lib" "-L" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib" "-Wl,-Bstatic" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/libsoundio-ac9ad6091b38ee1f.rlib" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/libfltk-9fe72c6cd0c2a3df.rlib" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/libraw_window_handle-c112ecc34f780e04.rlib" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/libfltk_sys-b2c5bd53399efffa.rlib" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibc-4191f0a4cdd6b949.rlib" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/libbitflags-662a7fee8d0ef189.rlib" "/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblazy_static-9702d1010b228fd0.rlib" "-Wl,--start-group" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd-b6b48477bfa8c673.rlib" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libpanic_unwind-f560ec02638f7ffe.rlib" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libminiz_oxide-9c8eadb7013c9e0b.rlib" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libadler-8b0ec8dbdb85d0bf.rlib" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libobject-ba5d5ee707c805d2.rlib" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libaddr2line-55166126dbdd5e46.rlib" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libgimli-c327b365eae3b2f3.rlib" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libstd_detect-416439b546a0d033.rlib" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/librustc_demangle-2581188d29552e15.rlib" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libhashbrown-da7b2635bfcce6ef.rlib" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/librustc_std_workspace_alloc-09200ed1945e7b2b.rlib" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libunwind-223ac369b29f5000.rlib" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcfg_if-39562fe6600dd936.rlib" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/liblibc-9b411bb7a19f81b3.rlib" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/liballoc-64ea0581d80339f7.rlib" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/librustc_std_workspace_core-b2dbda88b377d685.rlib" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcore-2a8415a96ed1d7dc.rlib" "-Wl,--end-group" "/home/tamayo/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/x86_64-unknown-linux-gnu/lib/libcompiler_builtins-c4d9a5b072ee3191.rlib" "-Wl,-Bdynamic" "-lpng" "-lpthread" "-lX11" "-lXext" "-lXinerama" "-lXcursor" "-lXrender" "-lXfixes" "-lXft" "-lfontconfig" "-lpango-1.0" "-lpangoxft-1.0" "-lgobject-2.0" "-lcairo" "-lpangocairo-1.0" "-lgcc_s" "-lutil" "-lrt" "-lpthread" "-lm" "-ldl" "-lc"
+  = note: /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `subscribe_callback':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:22: undefined reference to `pa_threaded_mainloop_signal'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `subscribe_to_events':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:30: undefined reference to `pa_context_subscribe'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:33: undefined reference to `pa_operation_unref'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `context_state_callback':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:42: undefined reference to `pa_context_get_state'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:53: undefined reference to `pa_threaded_mainloop_signal'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:56: undefined reference to `pa_threaded_mainloop_signal'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:65: undefined reference to `pa_threaded_mainloop_signal'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `destroy_pa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:75: undefined reference to `pa_threaded_mainloop_stop'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:77: undefined reference to `pa_context_disconnect'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:78: undefined reference to `pa_context_unref'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:84: undefined reference to `pa_threaded_mainloop_free'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:87: undefined reference to `pa_proplist_free'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `perform_operation':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:207: undefined reference to `pa_operation_get_state'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:209: undefined reference to `pa_threaded_mainloop_wait'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:212: undefined reference to `pa_operation_unref'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:215: undefined reference to `pa_operation_unref'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `sink_info_callback':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:227: undefined reference to `pa_threaded_mainloop_signal'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `source_info_callback':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:291: undefined reference to `pa_threaded_mainloop_signal'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `server_info_callback':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:362: undefined reference to `pa_threaded_mainloop_signal'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `refresh_devices':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:389: undefined reference to `pa_context_get_sink_info_list'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:390: undefined reference to `pa_context_get_source_info_list'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:391: undefined reference to `pa_context_get_server_info'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:443: undefined reference to `pa_threaded_mainloop_signal'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `my_flush_events':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:457: undefined reference to `pa_threaded_mainloop_lock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:460: undefined reference to `pa_threaded_mainloop_wait'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:478: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `wakeup_pa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:499: undefined reference to `pa_threaded_mainloop_lock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:500: undefined reference to `pa_threaded_mainloop_signal'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:501: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `force_device_scan_pa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:507: undefined reference to `pa_threaded_mainloop_lock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:509: undefined reference to `pa_threaded_mainloop_signal'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:511: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `playback_stream_state_callback':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:603: undefined reference to `pa_stream_get_state'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:610: undefined reference to `pa_threaded_mainloop_signal'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `outstream_destroy_pa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:636: undefined reference to `pa_threaded_mainloop_lock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:638: undefined reference to `pa_stream_set_write_callback'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:639: undefined reference to `pa_stream_set_state_callback'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:640: undefined reference to `pa_stream_set_underflow_callback'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:641: undefined reference to `pa_stream_set_overflow_callback'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:642: undefined reference to `pa_stream_disconnect'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:644: undefined reference to `pa_stream_unref'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:646: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `timing_update_callback':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:655: undefined reference to `pa_threaded_mainloop_signal'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `outstream_open_pa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:674: undefined reference to `pa_threaded_mainloop_lock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:683: undefined reference to `pa_stream_new'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:685: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:689: undefined reference to `pa_stream_set_state_callback'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:709: undefined reference to `pa_stream_connect_playback'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:713: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:718: undefined reference to `pa_threaded_mainloop_wait'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:720: undefined reference to `pa_stream_update_timing_info'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:722: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:726: undefined reference to `pa_stream_writable_size'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:729: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `outstream_start_pa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:739: undefined reference to `pa_threaded_mainloop_lock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:741: undefined reference to `pa_stream_writable_size'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:745: undefined reference to `pa_stream_cork'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:747: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:750: undefined reference to `pa_operation_unref'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:751: undefined reference to `pa_stream_set_write_callback'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:752: undefined reference to `pa_stream_set_underflow_callback'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:753: undefined reference to `pa_stream_set_overflow_callback'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:755: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `outstream_begin_write_pa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:768: undefined reference to `pa_stream_begin_write'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `outstream_end_write_pa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:787: undefined reference to `pa_stream_write'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `outstream_pause_pa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:805: undefined reference to `pa_threaded_mainloop_in_thread'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:806: undefined reference to `pa_threaded_mainloop_lock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:809: undefined reference to `pa_stream_is_corked'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:810: undefined reference to `pa_stream_cork'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:812: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:815: undefined reference to `pa_operation_unref'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:818: undefined reference to `pa_threaded_mainloop_in_thread'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:819: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `outstream_get_latency_pa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:831: undefined reference to `pa_stream_get_latency'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `recording_stream_state_callback':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:845: undefined reference to `pa_stream_get_state'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:852: undefined reference to `pa_threaded_mainloop_signal'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `instream_destroy_pa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:874: undefined reference to `pa_threaded_mainloop_lock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:876: undefined reference to `pa_stream_set_state_callback'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:877: undefined reference to `pa_stream_set_read_callback'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:878: undefined reference to `pa_stream_disconnect'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:879: undefined reference to `pa_stream_unref'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:881: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `instream_open_pa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:899: undefined reference to `pa_threaded_mainloop_lock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:908: undefined reference to `pa_stream_new'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:910: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:917: undefined reference to `pa_stream_set_state_callback'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:918: undefined reference to `pa_stream_set_read_callback'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:933: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `instream_start_pa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:942: undefined reference to `pa_threaded_mainloop_lock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:946: undefined reference to `pa_stream_connect_record'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:950: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:955: undefined reference to `pa_threaded_mainloop_wait'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:957: undefined reference to `pa_stream_update_timing_info'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:959: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:964: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `instream_begin_read_pa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:978: undefined reference to `pa_stream_peek'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `instream_end_read_pa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1011: undefined reference to `pa_stream_drop'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1021: undefined reference to `pa_stream_drop'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `instream_pause_pa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1033: undefined reference to `pa_threaded_mainloop_in_thread'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1034: undefined reference to `pa_threaded_mainloop_lock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1037: undefined reference to `pa_stream_is_corked'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1038: undefined reference to `pa_stream_cork'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1041: undefined reference to `pa_operation_unref'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1044: undefined reference to `pa_threaded_mainloop_in_thread'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1045: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `instream_get_latency_pa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1057: undefined reference to `pa_stream_get_latency'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(pulseaudio.c.o): In function `soundio_pulseaudio_init':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1070: undefined reference to `pa_threaded_mainloop_new'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1076: undefined reference to `pa_threaded_mainloop_get_api'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1078: undefined reference to `pa_proplist_new'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1084: undefined reference to `pa_context_new_with_proplist'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1090: undefined reference to `pa_context_set_subscribe_callback'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1091: undefined reference to `pa_context_set_state_callback'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1093: undefined reference to `pa_context_connect'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1099: undefined reference to `pa_threaded_mainloop_start'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1104: undefined reference to `pa_threaded_mainloop_lock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1108: undefined reference to `pa_threaded_mainloop_wait'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1111: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1117: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/pulseaudio.c:1122: undefined reference to `pa_threaded_mainloop_unlock'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `handle_channel_maps':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:209: undefined reference to `snd_pcm_free_chmaps'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:222: undefined reference to `snd_pcm_free_chmaps'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `test_fmt_mask':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:257: undefined reference to `snd_pcm_format_mask_test'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `set_access':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:266: undefined reference to `snd_pcm_hw_params_set_access'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `probe_open_device':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:284: undefined reference to `snd_pcm_hw_params_sizeof'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:284: undefined reference to `snd_pcm_hw_params_sizeof'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:286: undefined reference to `snd_pcm_hw_params_any'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:289: undefined reference to `snd_pcm_hw_params_set_rate_resample'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:298: undefined reference to `snd_pcm_hw_params_get_channels_min'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:300: undefined reference to `snd_pcm_hw_params_set_channels_last'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:309: undefined reference to `snd_pcm_hw_params_get_rate_min'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:312: undefined reference to `snd_pcm_hw_params_set_rate_last'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:328: undefined reference to `snd_pcm_hw_params_get_buffer_size_min'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:330: undefined reference to `snd_pcm_hw_params_get_buffer_size_max'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:336: undefined reference to `snd_pcm_hw_params_set_buffer_size_first'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:341: undefined reference to `snd_pcm_format_mask_sizeof'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:341: undefined reference to `snd_pcm_format_mask_sizeof'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:342: undefined reference to `snd_pcm_format_mask_none'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:343: undefined reference to `snd_pcm_format_mask_set'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:344: undefined reference to `snd_pcm_format_mask_set'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:345: undefined reference to `snd_pcm_format_mask_set'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:346: undefined reference to `snd_pcm_format_mask_set'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:347: undefined reference to `snd_pcm_format_mask_set'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o):/home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:348: more undefined references to `snd_pcm_format_mask_set' follow
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `probe_open_device':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:362: undefined reference to `snd_pcm_hw_params_set_format_mask'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:366: undefined reference to `snd_pcm_hw_params_get_format_mask'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `probe_device':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:401: undefined reference to `snd_pcm_open'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:409: undefined reference to `snd_pcm_close'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:414: undefined reference to `snd_pcm_query_chmaps'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:428: undefined reference to `snd_pcm_close'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:441: undefined reference to `snd_pcm_get_chmap'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:447: undefined reference to `snd_pcm_close'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:461: undefined reference to `snd_pcm_close'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:466: undefined reference to `snd_pcm_close'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `refresh_devices':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:479: undefined reference to `snd_config_update_free_global'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:481: undefined reference to `snd_config_update'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:491: undefined reference to `snd_device_name_hint'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:502: undefined reference to `snd_device_name_get_hint'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:520: undefined reference to `snd_device_name_get_hint'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:523: undefined reference to `snd_device_name_get_hint'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:570: undefined reference to `snd_device_name_free_hint'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:591: undefined reference to `snd_device_name_free_hint'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:627: undefined reference to `snd_device_name_free_hint'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:648: undefined reference to `snd_device_name_free_hint'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:652: undefined reference to `snd_card_next'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:656: undefined reference to `snd_ctl_card_info_sizeof'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:656: undefined reference to `snd_ctl_card_info_sizeof'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:659: undefined reference to `snd_pcm_info_sizeof'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:659: undefined reference to `snd_pcm_info_sizeof'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:666: undefined reference to `snd_ctl_open'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:675: undefined reference to `snd_ctl_card_info'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:676: undefined reference to `snd_ctl_close'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:680: undefined reference to `snd_ctl_card_info_get_name'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:684: undefined reference to `snd_ctl_pcm_next_device'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:685: undefined reference to `snd_ctl_close'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:692: undefined reference to `snd_pcm_info_set_device'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:693: undefined reference to `snd_pcm_info_set_subdevice'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:697: undefined reference to `snd_pcm_info_set_stream'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:699: undefined reference to `snd_ctl_pcm_info'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:703: undefined reference to `snd_ctl_close'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:709: undefined reference to `snd_pcm_info_get_name'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:713: undefined reference to `snd_ctl_close'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:726: undefined reference to `snd_ctl_close'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:741: undefined reference to `snd_pcm_query_chmaps_from_hw'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:751: undefined reference to `snd_ctl_close'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:752: undefined reference to `snd_card_next'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `outstream_destroy_alsa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:998: undefined reference to `snd_pcm_close'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `outstream_xrun_recovery':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1016: undefined reference to `snd_pcm_prepare'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1020: undefined reference to `snd_pcm_resume'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1025: undefined reference to `snd_pcm_prepare'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `instream_xrun_recovery':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1036: undefined reference to `snd_pcm_prepare'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1040: undefined reference to `snd_pcm_resume'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1045: undefined reference to `snd_pcm_prepare'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `outstream_wait_for_poll':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1062: undefined reference to `snd_pcm_poll_descriptors_revents'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `instream_wait_for_poll':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1083: undefined reference to `snd_pcm_poll_descriptors_revents'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `outstream_thread_run':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1104: undefined reference to `snd_pcm_state'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1108: undefined reference to `snd_pcm_prepare'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1116: undefined reference to `snd_pcm_avail'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1129: undefined reference to `snd_pcm_start'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1147: undefined reference to `snd_pcm_drop'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1151: undefined reference to `snd_pcm_reset'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1164: undefined reference to `snd_pcm_avail_update'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `instream_thread_run':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1208: undefined reference to `snd_pcm_state'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1211: undefined reference to `snd_pcm_prepare'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1217: undefined reference to `snd_pcm_start'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1234: undefined reference to `snd_pcm_avail_update'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `outstream_open_alsa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1294: undefined reference to `snd_pcm_hw_params_sizeof'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1294: undefined reference to `snd_pcm_hw_params_sizeof'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1298: undefined reference to `snd_pcm_open'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1303: undefined reference to `snd_pcm_hw_params_any'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1309: undefined reference to `snd_pcm_hw_params_set_rate_resample'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1319: undefined reference to `snd_pcm_hw_params_set_channels'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1324: undefined reference to `snd_pcm_hw_params_set_rate'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1330: undefined reference to `snd_pcm_format_physical_width'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1336: undefined reference to `snd_pcm_hw_params_set_format'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1342: undefined reference to `snd_pcm_hw_params_set_buffer_size_near'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1349: undefined reference to `snd_pcm_hw_params'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1354: undefined reference to `snd_pcm_hw_params_get_period_size'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1365: undefined reference to `snd_pcm_set_chmap'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1370: undefined reference to `snd_pcm_sw_params_sizeof'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1370: undefined reference to `snd_pcm_sw_params_sizeof'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1372: undefined reference to `snd_pcm_sw_params_current'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1377: undefined reference to `snd_pcm_sw_params_set_start_threshold'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1382: undefined reference to `snd_pcm_sw_params_set_avail_min'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1388: undefined reference to `snd_pcm_sw_params'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1402: undefined reference to `snd_pcm_poll_descriptors_count'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1415: undefined reference to `snd_pcm_poll_descriptors'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `outstream_begin_write_alsa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1476: undefined reference to `snd_pcm_mmap_begin'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `outstream_end_write_alsa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1505: undefined reference to `snd_pcm_writei'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1511: undefined reference to `snd_pcm_writen'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1513: undefined reference to `snd_pcm_mmap_commit'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `outstream_pause_alsa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1547: undefined reference to `snd_pcm_pause'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `outstream_get_latency_alsa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1563: undefined reference to `snd_pcm_delay'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `instream_destroy_alsa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1581: undefined reference to `snd_pcm_close'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `instream_open_alsa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1616: undefined reference to `snd_pcm_hw_params_sizeof'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1616: undefined reference to `snd_pcm_hw_params_sizeof'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1620: undefined reference to `snd_pcm_open'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1625: undefined reference to `snd_pcm_hw_params_any'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1631: undefined reference to `snd_pcm_hw_params_set_rate_resample'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1641: undefined reference to `snd_pcm_hw_params_set_channels'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1646: undefined reference to `snd_pcm_hw_params_set_rate'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1652: undefined reference to `snd_pcm_format_physical_width'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1658: undefined reference to `snd_pcm_hw_params_set_format'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1664: undefined reference to `snd_pcm_hw_params_set_period_size_near'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1673: undefined reference to `snd_pcm_hw_params_set_buffer_size_last'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1679: undefined reference to `snd_pcm_hw_params'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1689: undefined reference to `snd_pcm_set_chmap'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1694: undefined reference to `snd_pcm_sw_params_sizeof'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1694: undefined reference to `snd_pcm_sw_params_sizeof'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1696: undefined reference to `snd_pcm_sw_params_current'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1702: undefined reference to `snd_pcm_sw_params'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1716: undefined reference to `snd_pcm_poll_descriptors_count'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1728: undefined reference to `snd_pcm_poll_descriptors'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `instream_begin_read_alsa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1768: undefined reference to `snd_pcm_readi'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1785: undefined reference to `snd_pcm_readn'
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1796: undefined reference to `snd_pcm_mmap_begin'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `instream_end_read_alsa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1825: undefined reference to `snd_pcm_mmap_commit'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `instream_pause_alsa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1843: undefined reference to `snd_pcm_pause'
+          /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/liblibsoundio_sys-6c6fab34ba147d26.rlib(alsa.c.o): In function `instream_get_latency_alsa':
+          /home/tamayo/.cargo/registry/src/github.com-1ecc6299db9ec823/libsoundio-sys-0.3.0/libsoundio/src/alsa.c:1858: undefined reference to `snd_pcm_delay'
+          collect2: error: ld returned 1 exit status
+          
+
+error: aborting due to previous error
+
+error: could not compile `hello_fltk_rs`
+
+Caused by:
+  process didn't exit successfully: `rustc --crate-name hello_fltk_rs --edition=2018 src/main.rs --error-format=json --json=diagnostic-rendered-ansi --crate-type bin --emit=dep-info,link -C embed-bitcode=no -C debuginfo=2 -C metadata=bb418de9ed5492ca -C extra-filename=-bb418de9ed5492ca --out-dir /home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps -C incremental=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/incremental -L dependency=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps --extern fltk=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/libfltk-9fe72c6cd0c2a3df.rlib --extern soundio=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/deps/libsoundio-ac9ad6091b38ee1f.rlib -L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/build -L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/build/Release -L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/lib -L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/lib64 -L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/lib/Release -L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/fltk-sys-cdf048bb07dce2fb/out/lib64/Release -L native=/home/tamayo/projects/recurse/hello_fltk_rs/target/debug/build/libsoundio-sys-47bf8501b0360d76/out/lib` (exit status: 1)
