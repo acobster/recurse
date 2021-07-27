@@ -8,9 +8,14 @@ use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
 extern {
     pub fn alert(s: &str);
+    pub fn show(s: &str);
+}
+
+pub fn compile(code: &str) -> &str {
+    code
 }
 
 #[wasm_bindgen]
-pub fn greet(name: &str) {
-    alert(&format!("Hello, {}!", name));
+pub fn compile_and_show(code: &str) {
+    show(compile(code));
 }
